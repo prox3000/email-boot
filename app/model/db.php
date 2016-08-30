@@ -11,6 +11,12 @@ class db {
     public static function getInstance() {
         if ( is_null(self::$instance) ) {
             self::$instance = new db();
+            global $dbConfig;
+            self::$instance->connect = mysql_connect(
+                    $dbConfig['host'],
+                    $dbConfig['login'],
+                    $dbConfig['pass']);
+            mysql_select_db($dbConfig['bd'], self::$instance->connect);
             
         }
         return self::$instance;
