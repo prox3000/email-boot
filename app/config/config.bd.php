@@ -1,8 +1,8 @@
 <?php
 $dbConfig = [
   'host' => 'localhost',  
-  'bd' => 'bmil',
+  'bd' => 'LDA',
   'login' => 'root',
-  'pass' => '',
+  'pass' => 'prox',
     ];
 

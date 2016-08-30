@@ -1,6 +1,6 @@
 <?php
 
-class db {
+class task {
 
     protected static $instance;  
     protected $connect;
@@ -10,14 +10,26 @@ class db {
     
     public static function getInstance() {
         if ( is_null(self::$instance) ) {
-            self::$instance = new db();
-            
+            self::$instance = new task();
+            self::$instance->connect = db::getInstance()->GetLink();
         }
         return self::$instance;
     }
 
-    public function GetLink() { return self::getInstance()->connect; }
+    
+    public function getTaskById($id){
+        
+    }
+    
+    public function getActivTask(){
+        
+    }
+    
+    public function setTask($id,$param){
+        
+    }
     
     public function doAction() { /* ... */ }
 
 }
+

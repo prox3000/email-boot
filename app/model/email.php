@@ -1,6 +1,6 @@
 <?php
 
-class db {
+class email {
 
     protected static $instance;  
     protected $connect;
@@ -16,8 +16,12 @@ class db {
         return self::$instance;
     }
 
-    public function GetLink() { return self::getInstance()->connect; }
+    
+    public function getEmailBySend(){
+        
+    }
     
     public function doAction() { /* ... */ }
 
 }
+
