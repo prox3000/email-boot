@@ -24,7 +24,16 @@ class db {
 
     public function getTable($sNameTable,$param = []) {
         $p['order_by'] = " ORDER BY id ";
-        $sQuery = "SELECT * FROM {$sNameTable} {$p['order_by']}";
+        $p['where'] = "";
+        $p['select'] = "*";
+        
+        if(!empty($param)){
+            foreach ($param as $key => $param){
+                $p[$key] = $param;
+            }
+        }
+        
+        $sQuery = "SELECT {$p['select']} FROM {$sNameTable} {$p['where']} {$p['order_by']}";
         $nResult = mysql_query($sQuery) or die(mysql_error());
         $aRet = array();
         while($row = mysql_fetch_array($nResult,MYSQL_ASSOC)) {

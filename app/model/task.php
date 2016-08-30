@@ -22,7 +22,9 @@ class task {
     }
     
     public function getActivTask(){
-        return $this->db->getTable('ld_task');
+        return $this->db->getTable('ld_task',[
+            'where' => 'where `stat` = 0'
+        ]);
     }
     
     public function setTask($id,$param){
