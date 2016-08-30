@@ -22,6 +22,17 @@ class db {
         return self::$instance;
     }
 
+    public function getTable($sNameTable,$param = []) {
+        $p['order_by'] = " ORDER BY id ";
+        $sQuery = "SELECT * FROM {$sNameTable} {$p['order_by']}";
+        $nResult = mysql_query($sQuery) or die(mysql_error());
+        $aRet = array();
+        while($row = mysql_fetch_array($nResult,MYSQL_ASSOC)) {
+          $aRet[] = $row;
+        }
+        return $aRet;
+    }
+    
     public function GetLink() { return self::getInstance()->connect; }
     
     public function doAction() { /* ... */ }

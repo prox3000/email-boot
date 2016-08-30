@@ -3,7 +3,7 @@ class taskCommand {
     
   public function base(){
       $aActionTask = Task::getInstance()->getActivTask();
-      print_r('ok');
+      print_r($aActionTask);
   } 
   
 }
