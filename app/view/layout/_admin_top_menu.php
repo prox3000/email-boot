@@ -17,14 +17,13 @@
             <li>
                 <a class="dropdown-toggle"  href="#">Задачи</a>
                 <ul class="dropdown-menu dark" data-role="dropdown">
-                    <li><a href="/admin/task/">Список</a></li>
+                    <li><a href="/admin/task/index">Список</a></li>
                     <li><a href="/admin/task/add">Создать</a></li>
                 </ul>
             </li>
-            
-            
-            
         </ul>
-
+        <div class="no-tablet-portrait no-phone">
+            <a   href="/admin/out/"><div class="element place-right" title="Out"><span class="icon-star"></span> </div></a>
+        </div>
     </div>
 </div>

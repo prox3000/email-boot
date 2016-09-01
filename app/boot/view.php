@@ -6,6 +6,10 @@ if(!empty($aUrl[0])) {
  $sFile = "index";
  if(!empty($aUrl[1])){$sMod = $aUrl[1];}
  if(!empty($aUrl[2])){$sFile = $aUrl[2];}
+ 
+ if(config::g()->view_file != null){ $sFile = config::g()->view_file; }
+ if(config::g()->view_mode != null){ $sMod = config::g()->view_mode; }
+ 
  $sFilePath = __DIR__ . "/../view/".$aUrl[0]."/".$sMod."/".$sFile.".php";
  if(file_exists($sFilePath)) {
      ob_start(); 

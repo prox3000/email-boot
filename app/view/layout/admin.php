@@ -30,7 +30,11 @@
     <title></title>
 </head>
 <body class="metro">
-    <?php include('_admin_top_menu.php'); ?>
+    <?php 
+    if(config::g()->no_topmenu != true ){
+        include('_admin_top_menu.php');
+    }
+    ?>
     <div class="container">
       <?php echo $outTempl; ?>
     </div>
