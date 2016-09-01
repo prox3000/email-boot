@@ -6,10 +6,15 @@ if(empty($aUrl[0]) && count($aUrl)>1){
 
 if(!empty($aUrl[0]))
 switch($aUrl[0]){
+   
+   case 'admin': 
+       config::g()->layout="admin";
    case 'command': 
        
-       $sFilePath = __DIR__ . "/../command/".$aUrl[1].".php";
-       $pbClass = $aUrl[1]."Command";
+       $mod = $aUrl[0];
+       
+       $sFilePath = __DIR__ . "/../{$mod}/".$aUrl[1].".php";
+       $pbClass = $aUrl[1].ucfirst($mod);
        if(!empty($aUrl[1]) && file_exists($sFilePath)) {
            require_once $sFilePath;
            
@@ -25,7 +30,9 @@ switch($aUrl[0]){
                }
            }
        }
-       
        break;
+  
+       
+     
 }
 

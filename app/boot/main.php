@@ -8,3 +8,7 @@ require_once 'boot.php';
 
 /* Подключение роутера */
 require_once 'router.php';
+
+/* Подключение отображения */
+require_once 'view.php';
+
