@@ -4,5 +4,4 @@ $dbConfig = [
   'bd' => 'LDA',
   'login' => 'root',
   'pass' => 'prox',
-    ];
-
+];

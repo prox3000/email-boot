@@ -1,2 +1,4 @@
 RewriteEngine on
+RewriteCond %{REQUEST_URI} !^/pma/
+RewriteCond %{REQUEST_URI} !\.(xml|txt|css|js|jpg|png|ttf|woff)$
 RewriteRule ^(.*)$ index.php?url=$1
